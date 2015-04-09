@@ -93,7 +93,7 @@
 
         <menuitem id="add" name="المخازن والمنتجات"/>
         <menuitem id="menu1" name="montagat"   parent="add"/>
-        <menuitem id="menu2" name="edaft montag" parent="menu1" action="product_add_action"/>
+        <menuitem id="menu2" name="اضافة منتج" parent="menu1" action="product_add_action"/>
 
 
         <!-- ...........................................category................................................... -->
@@ -245,9 +245,12 @@
                 <tree string="My Warehouse">
                     <field name="name" string="الاسم"/>
                     <field name="address" string="المكان"/>
-                    <field name="keeper_ids" string="أمين المخزن" search="[('model','=','myhr_employee'),('career','=','k')]"/>
-                    <field name="manager_ids" string="مدير المخزن" search="[('model','=','myhr_employee'),('career','=','mk')]"/>
-                    <field name="supermanager_ids" string="المدير العام" search="[('model','=','myhr_employee'),('career','=','sm')]"/>
+                    <!--<field name="keeper_ids" string="أمين المخزن" search="[('model','=','myhr_employee'),('user_system','=','امين مخزن')]"/>-->
+                    <!--<field name="manager_ids" string="مدير المخزن" search="[('model','=','myhr_employee'),('user_system','=','مدير مخزن')]"/>-->
+                    <!--<field name="supermanager_ids" string="المدير العام" search="[('model','=','myhr_employee'),('user_system','=','مدير المخازن')]"/>-->
+                    <field name="keeper_ids" string="المسئولين" />
+                    <!--<field name="manager_ids" string="مدير مخزن" search="[('model','=','myhr_employee'),('user_system','=','مدير مخزن')]"/>-->
+                    <!--<field name="supermanager_ids" string="مدير المخازن" search="[('model','=','myhr_employee'),('user_system','=','مدير المخازن')]"/>-->
 
                 </tree>
             </field>
@@ -261,9 +264,12 @@
                     <sheet>
                         <group><field name="name" string="الاسم"/></group>
                         <group><field name="address" string="المكان"/></group>
-                        <group><field name="keeper_ids" string="أمين المخزن" domain = "[('career','=','k')]"/></group>
-                        <group><field name="manager_ids" string="مدير المخزن" domain = "[('career','=','mk')]"/></group>
-                        <group><field name="supermanager_ids" string="المدير العام" domain = "[('career','=','sm')]"/></group>
+                        <!--<group><field name="keeper_ids" string="أمين المخزن" domain = "[('user_system','=','امين مخزن')]"/></group>-->
+                        <!--<group><field name="manager_ids" string="مدير المخزن" domain = "[('user_system','=','مدير مخزن')]"/></group>-->
+                        <!--<group><field name="supermanager_ids" string="المدير العام" domain = "[('user_system','=','مدير مخزن')]"/></group>-->
+                        <group><field name="keeper_ids" string="المسئولين"/></group>
+                        <!--<group><field name="manager_ids" string="مدير المخازن" domain = "[('user_system','=','مدير مخزن')]"/></group>-->
+                        <!--<group><field name="supermanager_ids" string="مدير مخزن" domain = "[('user_system','=','مدير المخازن')]" /></group>-->
                     </sheet>
                 </form>
             </field>
@@ -293,6 +299,8 @@
                     <field name="gender" string="النوع"/>
                     <field name="salary" string="المرتب"/>
                     <field name="career" string="الوظيفة"/>
+                    <field name="user_system" required="1"/>
+                    <field name="warehouse_id"/>
                 </tree>
             </field>
         </record>
@@ -315,6 +323,8 @@
                             </group>
                             <group string="Role">
                                 <field name="career" string="الوظيفة"/>
+                                <field name="user_system" required="1"/>
+                                <field name="warehouse_id"/>
                             </group>
                         </group>
 
@@ -329,7 +339,8 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <menuitem id="employee" name="employees" parent="menu1" action="myhr_employee_action"/>
+        <menuitem id="employee" name="الموظفين" parent="menu1" action="myhr_employee_action"/>
+        <menuitem id="pro_emp" name="Emp" parent="menu1" action="myhr_employee_action"/>
 
     </data>
 </openerp>

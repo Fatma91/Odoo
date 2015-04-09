@@ -7,5 +7,5 @@
     'website': 'http://www.odooproject.com',
     'depends': ['base', 'hr'],
     'data': [
-        'odoowarehouse_view.xml', 'odoowarehouse_view.xml', ]
+        'odoowarehouse_view.xml', 'odoowarehouse_view.xml','security/odoowarehouse_security.xml', 'security/ir.model.access.csv' ]
 }

@@ -21,8 +21,11 @@ class myhr_employees(orm.Model):
         'salary': fields.float(string="المرتب", size=8),
         'gender': fields.selection(gender, string="النوع"),
         'career': fields.selection(career, string="المهنه"),
-    }
+        'user_system': fields.many2one("res.users", "User System"),
+        'warehouse_id': fields.many2one('odoowarehouse.warehouse', 'Warehouse'),
 
+    }
+    _rec_name = 'name'
         #...........................................warehouse...................................................
 
 class odoowarehouse_warehouse(orm.Model):
@@ -31,9 +34,12 @@ class odoowarehouse_warehouse(orm.Model):
 
         'name': fields.char(string='الاسم', required=True, size=8),
         'address': fields.char(string='المكان', size=20),
-        'keeper_ids': fields.many2one('myhr.employee', 'أمين المخزن', select=True),
-        'manager_ids': fields.many2one('myhr.employee', 'مدير المخزن', select=True),
-        'supermanager_ids': fields.many2one('myhr.employee', 'المدير العام', select=True),
+        # 'keeper_ids': fields.many2one('myhr.employee', 'أمين المخزن', select=True),
+        # 'manager_ids': fields.many2one('myhr.employee', 'مدير المخزن', select=True),
+        # 'supermanager_ids': fields.many2one('myhr.employee', 'المدير العام', select=True),
+        'keeper_ids': fields.one2many('myhr.employee', 'warehouse_id', string="المسئولين"),
+        # 'manager_ids': fields.one2many('myhr.employee', 'warehouse_id', string="أمين المخزن"),
+        # 'supermanager_ids': fields.one2many('myhr.employee', 'warehouse_id', string="أمين المخزن"),
     }
 
         #...........................................category...................................................
