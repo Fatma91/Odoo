@@ -1,0 +1,12 @@
+{
+    'name': 'oadoowarehouse',
+    'version': '1.0',
+    'summary': 'oadoowarehouse',
+    'description': """ this is my module for products """,
+    'author': 'fatma',
+    'website': 'http://www.odooproject.com',
+    'depends': [],
+    'data': [
+        'oadoowarehouse_view.xml', 'oadoowarehousewf_view.xml'
+    ],
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+
+
+        <!--product-->
+        <!--<record id="product_add_tree" model="ir.ui.view">-->
+        <!--<field name="name">product.add.tree</field>-->
+        <!--<field name="model">product.add</field>-->
+        <!--<field name="arch" type="xml">-->
+        <!--<tree string="Product">-->
+        <!--<field name="Pname"/>-->
+        <!--<field name="Proid"/>-->
+        <!--<field name="Procode"/>-->
+        <!--</tree>-->
+        <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="product_add_form" model="ir.ui.view">-->
+        <!--<field name="name">product.add.form</field>-->
+        <!--<field name="model">product.add</field>-->
+        <!--<field name="arch" type="xml">-->
+        <!--<form string="Product" version="7.0">-->
+        <!--<sheet>-->
+        <!--<notebook>-->
+        <!--<page string="product information">-->
+        <!--<group>-->
+        <!--<field name="Pname"/>-->
+        <!--<field name="Price"/>-->
+        <!--<field name="Pmax"/>-->
+        <!--<field name="Pmin"/>-->
+        <!--<field name="Proid"/>-->
+        <!--<field name="case"/>-->
+        <!--</group>-->
+        <!--</page>-->
+        <!--<page string="specified product">-->
+        <!--<group>-->
+        <!--<field name="cat_id"/>-->
+        <!--<field name="subcat_id"/>-->
+        <!--<field name="subsubcat_id"/>-->
+        <!--<field name="Procode"/>-->
+        <!--</group>-->
+        <!--</page>-->
+        <!--</notebook>-->
+        <!--</sheet>-->
+        <!--</form>-->
+        <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="product_add_action" model="ir.actions.act_window">-->
+        <!--<field name="name">product_add</field>-->
+        <!--<field name="res_model">product.add</field>-->
+        <!--<field name="view_type">form</field>-->
+        <!--<field name="view_mode">tree,form</field>-->
+        <!--</record>-->
+
+        <!--<menuitem id="add" name="Products"/>-->
+        <!--<menuitem id="menu1" name="Product" parent="add"/>-->
+        <!--<menuitem id="menu2" name="product information" parent="menu1" action="product_add_action"/>-->
+
+    </data>
+</openerp>
