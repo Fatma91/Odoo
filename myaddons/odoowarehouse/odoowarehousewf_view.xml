@@ -2,9 +2,7 @@
 <openerp>
     <data>
 
-
-
- <--..............................-->
+        
         <!--product-->
         <!--<record id="product_add_tree" model="ir.ui.view">-->
         <!--<field name="name">product.add.tree</field>-->
